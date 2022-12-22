@@ -1,0 +1,15 @@
+---
+
+- name: Ensure kube-prometheus-stack is installed on management cluster
+  kubernetes.core.helm:
+    chart_ref: kube-prometheus-stack
+    chart_repo_url: https://prometheus-community.github.io/helm-charts
+    chart_version: 41.7.4
+    release_namespace: monitoring-system
+    release_name: kube-prometheus-stack
+    # release_values: "{{ awx_postgresql_release_values }}"
+    atomic: yes #Delete installation on failure
+    create_namespace: yes
+    wait: yes
+    wait_timeout: 10m
+    # release_state: absent
