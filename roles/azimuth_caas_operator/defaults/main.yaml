@@ -79,7 +79,7 @@ azimuth_caas_stackhpc_slurm_appliance_enabled: "{{ azimuth_clusters_enabled }}"
 # The git URL for the StackHPC Slurm appliance
 azimuth_caas_stackhpc_slurm_appliance_git_url: https://github.com/stackhpc/caas-slurm-appliance.git
 # The git version for the StackHPC Slurm appliance
-azimuth_caas_stackhpc_slurm_appliance_git_version: f46791141b681797a696f638c8eb88b4040d543d
+azimuth_caas_stackhpc_slurm_appliance_git_version: ada2e4e92a97edeeccc30157070f03043e207553
 # The playbook to use for the StackHPC Slurm appliance
 azimuth_caas_stackhpc_slurm_appliance_playbook: slurm-infra.yml
 # The metadata root for the StackHPC Slurm appliance
@@ -105,25 +105,9 @@ azimuth_caas_stackhpc_slurm_appliance_image: >-
       else None
     )
   }}
-# The name of a flavor to use for Slurm login nodes
-azimuth_caas_stackhpc_slurm_appliance_login_flavor_name: >-
-  {{-
-    undef(hint = 'azimuth_caas_stackhpc_slurm_appliance_login_flavor_name is required')
-    if azimuth_caas_stackhpc_slurm_appliance_enabled
-    else None
-  }}
-# The name of a flavor to use for Slurm control nodes
-azimuth_caas_stackhpc_slurm_appliance_control_flavor_name: >-
-  {{-
-    undef(hint = 'azimuth_caas_stackhpc_slurm_appliance_control_flavor_name is required')
-    if azimuth_caas_stackhpc_slurm_appliance_enabled
-    else None
-  }}
 # The default extra vars for templates in the StackHPC Slurm appliance
 azimuth_caas_stackhpc_slurm_appliance_extra_vars_defaults:
   cluster_image: "{{ azimuth_caas_stackhpc_slurm_appliance_image }}"
-  login_flavor_name: "{{ azimuth_caas_stackhpc_slurm_appliance_login_flavor_name }}"
-  control_flavor_name: "{{ azimuth_caas_stackhpc_slurm_appliance_control_flavor_name }}"
 # extra_vars overrides for templates in the StackHPC Slurm appliance
 azimuth_caas_stackhpc_slurm_appliance_extra_vars_overrides: {}
 azimuth_caas_stackhpc_slurm_appliance_extra_vars: >-
