@@ -174,7 +174,8 @@ azimuth_caas_stackhpc_workstation_image: >-
 azimuth_caas_stackhpc_workstation_extra_vars_defaults:
   cluster_image: "{{ azimuth_caas_stackhpc_workstation_image }}"
 # extra_vars overrides for templates in the StackHPC workstation
-azimuth_caas_stackhpc_workstation_extra_vars_overrides: {}
+azimuth_caas_stackhpc_workstation_extra_vars_overrides:
+  my_var: "hello world"
 azimuth_caas_stackhpc_workstation_extra_vars: >-
   {{-
     azimuth_caas_stackhpc_workstation_extra_vars_defaults |
